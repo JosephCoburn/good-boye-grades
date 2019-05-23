@@ -16,15 +16,14 @@
 
 #### Core Functionality
 - Create account using OAuth
-- Access dogs API
-- Display dog photos
-- Allow rating
+- View randomly generated photos of dogs
+- Enter and save rating from 0 to 10 for each photo
+- Edit/update rating
 - Delete rating
-- Update rating
-- View photos with ratings
+- View photos previously rated
 
 #### Upcoming Functionality
-- Adding note to photo
+- Add, save, edit, delete notes on photo
 - Add your own photos
 - Add friends
 - View friends' ratings
