@@ -1,8 +1,16 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.brand-logo {
+  margin-left: 15px;
 }
 
-a {
-  color: #00B7FF;
+.card .card-content .card-title {
+  margin-bottom: 10px;
+}
+
+#search-row form {
+  padding-top: 20px;
+}
+
+.user-name {
+  position: relative;
+  top: -5px;
 }
