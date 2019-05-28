@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+
 // session middleware
 var session = require('express-session');
 var passport = require('passport');
@@ -19,8 +20,8 @@ require('./config/database');
 require('./config/passport');
 
 // require our routes
-var indexRoutes = require('./routes/index');
-var usersRoutes = require('./routes/users');
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -42,9 +43,9 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// mount all routes with appropriate base paths
-app.use('/', indexRoutes);
-app.use('/', usersRoutes);
+// mount all routers with appropriate base paths
+app.use('/', indexRouter);
+app.use('/', usersRouter);
 
 // invalid request, send 404 page
 app.use(function(req, res) {
