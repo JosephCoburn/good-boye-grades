@@ -22,6 +22,7 @@ var operatorsCtrl = require('../controllers/operators');
 // GET /operators
 router.get('/operators', operatorsCtrl.index);
 
+
 // POST /facts
 // We will already have access to the logged in operator on
 // the server, therefore do not use: /operators/:id/facts

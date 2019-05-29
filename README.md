@@ -11,7 +11,7 @@
 
 #### Getting Started
 
-*Click login graphic and sign in using Google. Then, click "Go" to begin! To enter a rating, simply type a number (0-10), watch as it appears on-screen and hit enter to save. The next randomly generated dog photo will appear automatically.* 
+*Click login graphic and sign in using Google. Then, click "Go" to begin! To enter a rating, simply type a number (1-10), watch as it appears on-screen and hit enter to save. The next randomly generated dog photo will appear automatically.* 
 
 
 #### Core Functionality
