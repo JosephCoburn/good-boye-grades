@@ -10,7 +10,19 @@
   padding-top: 20px;
 }
 
-.user-name {
+.student-name {
   position: relative;
   top: -5px;
+}
+
+.collection-item form {
+  margin-top: -5px;
+}
+
+.container {
+  display: none;
+}
+
+.welcome {
+  align-content: center;
 }

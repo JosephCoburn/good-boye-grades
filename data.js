@@ -150,7 +150,7 @@ exports.dogs = [
     {url: 'https://imgur.com/qPEDLnZ', breed: 'German Shepherd'},
     {url: 'https://imgur.com/gYn96eA', breed: 'German Shepherd'},
     {url: 'https://imgur.com/W3m4AQT', breed: 'Golden Retriever'},
-    {url: 'https://imgur.com/QZSt8B8', breed: 'Golden Retriever'},
+    {url: 'https://imgur.com/ETcR90g', breed: 'Golden Retriever'},
     {url: 'https://imgur.com/szPDUmb', breed: 'Great Dane'},
     {url: 'https://imgur.com/8BUJ35A', breed: 'Great Dane'},
     {url: 'https://imgur.com/qUHVe32', breed: 'Great Pyrenees'},

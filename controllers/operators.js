@@ -1,4 +1,4 @@
-const User = require('../models/operator');
+const Operator = require('../models/operator');
 
 // module.exports = {
 //   index,
