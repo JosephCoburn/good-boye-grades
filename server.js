@@ -10,9 +10,9 @@ var methodOverride = require('method-override');
 
 // create the Express app
 var app = express();
+
 // load the env vars
 require('dotenv').config();
-
 // connect to the MongoDB with mongoose
 require('./config/database');
 // configure Passport
