@@ -7,8 +7,6 @@ var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
 
-// load the env vars
-require('dotenv').config();
 
 // create the Express app
 var app = express();
@@ -17,6 +15,8 @@ var app = express();
 require('./config/database');
 // configure Passport
 require('./config/passport');
+// load the env vars
+require('dotenv').config();
 
 // require our routes
 var indexRouter = require('./routes/index');
