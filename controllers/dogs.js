@@ -1,33 +1,40 @@
-var Dog = require('../models/dog');
+const Dog = require('../models/dog');
 
 module.exports = {
-    index
+    index,
+    addRating
 }
 
-function index(req,res){
-    Dog.find({}, function(err, dogs){
-        res.render('dogs/home', {
-            dogs
-        })
+function index(req, res) {
+    Dog.count().exec(function (err, count) {
+        // Get a random dog
+        var random = Math.floor(Math.random() * count)
+        // Again query all dogs but only fetch one offset by our random #
+        Dog.findOne().skip(random).exec(
+          function (err, dog) {
+            res.render('dogs/home', {
+                dog
+            })
+          })
     })
 };
 
-// function index(req, res, next) {
-//     console.log(req.query)
-//     // Make the query object to use with Operator.find based up
-//     // the user has submitted the search form or now
-//     let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
-//     // Default to sorting by name
-//     let sortKey = req.query.sort || 'name';
-//     Operator.find(modelQuery)
-//     .sort(sortKey).exec(function(err, operators) {
-//       if (err) return next(err);
-//       // Passing search values, name & sortKey, for use in the EJS
-//       res.render('operators/index', {
-//         operators,
-//         user: req.user,
-//         name: req.query.name,
-//         sortKey
-//       });
+function addRating(req, res, next) {
+    Dog.findById(req.body.dog, function(err, dog) {
+        console.log(req.body);
+        req.body.operator = req.user.id;
+        dog.ratings.push(req.body);
+        dog.save(function(err) {
+          res.redirect(`/dogs/home`);
+        });
+    });
+}
+
+// function viewRatings(req, res, next) {
+//     Dog.findById(req.body.dogId, function(err, dog) {
+//         dog.ratings.push(req.body);
+//         dog.save(function(err) {
+//           res.redirect(`/ratings`);
+//         });
 //     });
-//   }
+// }

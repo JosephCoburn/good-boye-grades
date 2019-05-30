@@ -4,9 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Begin</title>
+    <title>Home</title>
+    <style>
+        #breedReveal {
+            text-align: center;
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Rate This Dog!</h1>
+    <img width="500" src="<%= dog.url %>"/> <br>
+    <form action="/dogs/home" method="POST">
+        Rating: <input type="number" name="rating" min="1" max="10" default="5">
+        <input type="submit" value="Submit">
+        <input name="dog" type="hidden" value="<%=dog._id%>">
+    </form>
+    <button onclick="myFunction()">Tell me what kinda dog this is right now</button>
+    <div id="breedReveal"> <%= dog.breed %> </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("breedReveal");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+    <br>
+    <a href="/ratings/index">My grades</a>
 </body>
 </html>

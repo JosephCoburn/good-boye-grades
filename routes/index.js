@@ -27,10 +27,4 @@ router.get('/logout', function(req, res){
   res.redirect('/');
 });
 
-// Dog rating route
-router.get('/dogs', function(req, res){
-  res.redirect('/dogs');
-});
-
-
 module.exports = router;
