@@ -8,6 +8,7 @@
   <!-- Materialize CSS Framework -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="stylesheets/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Ultra&display=swap" rel="stylesheet">
   <!-- JavaScript for Materialize -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
@@ -16,31 +17,23 @@
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-        <a href="" class="brand-logo left">Good Boye Grades</a>
+          <% if (user) { %>
+        <a href="/dogs/home" class="brand-logo left" style="color:#63585E">
+          <% } else { %>
+        <a href="" class="brand-logo left" style="color:#63585E">
+            <% } %>
+        Good Boye Grades</a>
         <ul class="right">
           <li>
             <% if (user) { %>
-                <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+                <a href="/logout" style="color:#63585E">Log Out</a>
             <% } else { %>
-                <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
+                <a href="/auth/google" style="color:#63585E">Login with Google</a>
             <% } %>
           </li>
         </ul>
       </div>
     </nav>
-  </div>
-  <div class="welcome">
-    <% if (user) { %>
-      <div>
-        To set a grade, type a number from 1 to 10 into the input box and click submit!
-        <br>
-        <a href="/dogs/home">Click here to begin!</a>
-        <br>
-        To access your previous grades <a href="/ratings/index">click here.</a>
-      </div>
-    <% } else { %>
-      <div>Please login with a valid Google account</div>
-    <% } %>
   </div>
 </body>
 </html>

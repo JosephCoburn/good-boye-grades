@@ -56,7 +56,7 @@ app.use('/', editRouter);
 
 // invalid request, send 404 page
 app.use(function(req, res) {
-  res.status(404).send('Ya broke it LOL <br> &nbsp; &nbsp; ¯\\_(ツ)_/¯ ');
+  res.status(404).send('<br> &nbsp; &nbsp;&nbsp;&nbsp; ¯\\_(ツ)_/¯ ');
 });
 
 module.exports = app;

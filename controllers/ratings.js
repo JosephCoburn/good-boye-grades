@@ -3,10 +3,12 @@ const User = require('../models/operator');
 const Dog = require('../models/dog');
 
 module.exports = {
-  index
+  index,
+  delete: deleteRating,
+  update,
+  edit
 };
 
-var newDogs; 
 
 function index(req, res, next) {
   Dog.find({}, function(err, dogs) {
@@ -23,24 +25,46 @@ function index(req, res, next) {
     //   return rating.operator === user._id
     // })
     console.log(newDogs)
-  })
-  // Make the query object to use with Operator.find based up
-  // the user has submitted the search form or now
-  let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
-  // Default to sorting by name
-  let sortKey = req.query.sort || 'name';
-  Rating.find(modelQuery)
-  .sort(sortKey).exec(function(err, ratings) {
-    if (err) return next(err);
-    // Passing search values, name & sortKey, for use in the EJS
     res.render('ratings/index', {
       newDogs,
       user: req.user,
-      name: req.query.name,
-      sortKey
+      name: req.query.name
     });
-  });
+  })
 }
 
+function deleteRating(req, res, next) {
+  console.log(req.params, req.body)
+  Dog.findById(req.body.dog, function(err, dog) {
+    dog.ratings.remove(req.params.id)
+    dog.save(function(err, dog) {
+      res.redirect('/ratings/index')
+    })
+  })
+};
 
+// this is using the rating/<dog._id> path instead of rating/<rating._id> path
+// will circle around to change routes to place update and edit on dog
+// instead of on rating
+function edit(req, res, next) {
+  console.log('hitting here')
+  console.log(req.params)
+  Dog.findById(req.params.dogId, function(err, dog) {
+    // console.log(rating)
+    res.render('ratings/edit', {
+      dog,
+      ratingId: req.params.ratingId
+    })
+  })
+};
+
+function update(req, res, next) {
+  Dog.findById(req.body.dogId, function(err, dog) {
+    // rating.rating = req.body.rating;
+    dog.ratings.id(req.body.ratingId).rating = req.body.rating;
+    dog.save(function(err, _dog) {
+      res.redirect('/ratings/index')
+    })
+  })
+};
 

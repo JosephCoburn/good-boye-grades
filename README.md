@@ -1,17 +1,17 @@
 # Good Boye Grades
 #### Description
-*Have you ever seen a dog and though "Wow, what a good boye!"? With Good Boye Grades, you get to declare just how good of a boye they are! Just a few clicks from the landing page and you're ready to go. No need to create an account, OAuth will take care of that for you. Save your ratings, view previous ratings, edit and delete ratings!*
+*Have you ever seen a dog and though "Wow, what a good boye!"? Now, you can declare just how good they are! Just a few clicks from the landing page and you're ready to go!*
 
 ![Shiba Inu](public/images/shiba.jpg "A REALLY Good Boye")
 
 [Open App](http://underconstruction)
 
 #### Technologies Used:
-*Javascript, Express, Node, MongoDB, APIs, OAuth*
+*Mongoose, Express, Node, HTML, CSS, Javascript*
 
 #### Getting Started
 
-*Click login and continue using Google OAuth. Then, click "Start" to begin! To enter a rating, simply type a number (1-10) into the input box and hit enter to save. The next randomly generated dog photo will appear automatically.* 
+*Click login and continue using your Google account. Then, click the title to begin. Enter a rating from 1 to 10 and click to save or hit return. The next randomly generated dog photo will appear automatically. Follow the link to the ratings page to see all previous dogs and their corresponding grades.* 
 
 
 #### Core Functionality

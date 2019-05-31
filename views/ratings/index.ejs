@@ -1,13 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ratings</title>
-</head>
+    <head>
+        <title>Good Boye Grades</title>
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="stylesheets/style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Ultra&display=swap" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Materialize CSS Framework -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- JavaScript for Materialize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </head>
+    <style>
+
+        .back {
+            margin: 0 0 0 25px;
+            font-size: 24px
+        }
+
+        nav {
+            background-color: #6A8EAE;
+            color: #63585E;
+        }
+
+        h1 {
+            color: #63585E;
+            margin: 7vh 0 6vh 8vw;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: #63585E;
+            margin: 0 0 0 9vw;;
+        }
+
+        body {
+            font-family: 'Ultra', serif;
+            color: #63585E;
+            background: #9BD1E5;
+            align-content: center;
+        }
+
+        .content {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        li {
+            font-size: 24px;
+            list-style-type: none;
+            margin: -3vh 0 -2vh 14vw;
+        }
+
+        .low {
+            width: 100px;
+            color: #63585E;
+            margin: 0 0 5vh 13vw;
+        }
+
+        input {
+            margin: 0 0 0 14vw;
+            border: 3px solid #ccc; 
+            border-radius: 10px;
+            border-color: grey; 
+        }
+
+        p {
+            margin: 0 0 0 14vw;
+        }
+
+    </style>
 <body> 
+    <nav> <a class="back" style="color:#63585E" href="/dogs/home">Go Back</a></nav>
+    <div class="content">
     <h1>Ratings:</h1>
-    <a href="/edit">Edit grades</a>
+    <div class="ratingsTable">
+
+       <% if (newDogs.length) { %>
+            <% newDogs.forEach(function(dog) { %>
+                <h3><%= dog.breed %></h3>
+
+               <img width="500" src="<%= dog.url %>">
+           <% if (dog.ratings) { %>
+                <ul>
+               <% dog.ratings.forEach(function(rating) { %>
+                    <li>
+                        <%= rating.rating %> / 10
+                    </li>
+                    <br/>
+                    <form method="POST" action="/ratings/<%= rating._id %>?_method=DELETE" >
+                        <input type="submit" value="Delete Grade">
+                        <input type="hidden" value="<%= dog._id %>" name="dog">
+                    </form>
+                    <a class="low" href="/dog/<%= dog._id %>/ratings/<%= rating._id %>/edit">Edit Grade</a>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+               <% }) %>
+                </ul>
+           <% } else { %>
+            <p>  No reviews yet! </p>
+            <% } %>
+           <% }) %>
+       <% } else { %>
+            <p class="none">
+                No ratings yet.
+                <a href="/dogs/home">Go back</a>
+            </p> 
+         <% } %>      
+
+    </div>
+</div>
 </body>
 </html>

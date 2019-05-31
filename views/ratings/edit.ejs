@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="stylesheets/style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Ultra&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+
+        h1 {
+            color: #63585E;
+            margin: 10vh 0 4vh 14vw;
+        }
+
+        body {
+            font-family: 'Ultra', serif;
+            color: #63585E;
+            background: #9BD1E5;
+            align-content: center;
+        }
+
+        .content {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        form {
+            margin: 0 0 5vh 12vw;
+        }
+
+        input {
+            border: 3px solid #ccc; 
+            border-radius: 10px;
+            border-color: grey; 
+            height: 3vh;
+            width: 2vw;
+        }
+        
+        .button {
+            background-color: rgb(181, 214, 244);
+            color: #63585E;
+            width: 7.5vw;
+            border: 3px solid grey;
+            border-radius: 10px;
+            height: 4vh; 
+        }
+
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+        }
+
+    </style>
+    <div class="content">
+    <h1>Revise </h1>
+    <img width="500" src="<%= dog.url %>"/>
+    <form method="POST" action="/ratings/<%= ratingId %>?_method=PUT">
+        Grade: <input type="number" name="rating" min="1" max="10" default="5">
+        <input type="hidden" name="ratingId" value="<%= ratingId %>">
+        <input type="hidden" name="dogId" value="<%= dog._id %>">
+        <input class="button" type="submit" value="Save"/>
+    </form>
+</div>
+</body>
+</html>

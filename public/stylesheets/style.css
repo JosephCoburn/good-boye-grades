@@ -2,23 +2,29 @@
   margin-left: 15px;
 }
 
-.card .card-content .card-title {
-  margin-bottom: 10px;
+nav {
+  background-color: #6A8EAE;
+  margin: 20%;
+  height: 30%;
+  width: 60vw;
 }
 
-#search-row form {
-  padding-top: 20px;
+body {
+  font-family: 'Ultra', serif;
+  color: #63585E;
+  background: #9BD1E5;
 }
 
-.student-name {
-  position: relative;
-  top: -5px;
+a {
+  color: #63585E;
 }
 
-.collection-item form {
-  margin-top: -5px;
+span {
+  margin-left: 50px;
+  height: 30%;
+  width: 60vw;
 }
 
-.container {
-  display: none;
+.welcome {
+  padding: 0 0 0 40px;
 }

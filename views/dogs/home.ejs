@@ -4,23 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>Good Boye Grades</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Ultra&display=swap" rel="stylesheet">
     <style>
         #breedReveal {
             text-align: center;
             display: none;
         }
+
+        body {
+            font-family: 'Ultra', serif;
+            color: #63585E;
+            background: #9BD1E5;
+            align-content: center;
+        }
+
+        .content {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #63585E;
+            margin: 10vh 0 4vh 9vw;
+        }
+
+        form {
+            color: #63585E;
+            margin: 0 0 2vh 12vw;
+        }
+
+        a {
+            color: #63585E;
+            margin: 0 0 0 13vw;
+            font-size: 22px;
+        }
+
+        input {
+            background-color: #6A8EAE;
+            border: 3px solid #ccc; 
+            border-radius: 10px;
+            border-color: grey; 
+            height: 3vh;
+            width: 5vw;
+        }
+        
+        button {
+            background-color: #6A8EAE;
+            color: #63585E;
+            margin: 1vh 0 4vh 15.5vw;
+            width: 7.5vw;
+            border: 3px solid grey;
+            border-radius: 10px;
+            height: 4vh; 
+        }
+
+        .num {
+            width: 2vw;
+            background-color: white;
+        }
+
+
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+        }
     </style>
 </head>
 <body>
+    <div class="content">
     <h1>Rate This Dog!</h1>
     <img width="500" src="<%= dog.url %>"/> <br>
     <form action="/dogs/home" method="POST">
-        Rating: <input type="number" name="rating" min="1" max="10" default="5">
+        Grade: <input class="num" type="number" name="rating" min="1" max="10" default="5">
         <input type="submit" value="Submit">
         <input name="dog" type="hidden" value="<%=dog._id%>">
     </form>
-    <button onclick="myFunction()">Tell me what kinda dog this is right now</button>
+    <br>
+    <a href="/ratings/index">All Grades</a>
+    <button onclick="myFunction()" style="color:black">Show Breed</button>
     <div id="breedReveal"> <%= dog.breed %> </div>
     <script>
         function myFunction() {
@@ -32,7 +97,6 @@
             }
         }
     </script>
-    <br>
-    <a href="/ratings/index">My grades</a>
+    </div>
 </body>
 </html>
