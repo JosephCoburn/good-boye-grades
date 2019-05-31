@@ -30,24 +30,28 @@
         }
 
         form {
-            margin: 0 0 5vh 12vw;
+            margin: 0 0 7% 20%;
         }
 
         input {
             border: 3px solid #ccc; 
             border-radius: 10px;
             border-color: grey; 
-            height: 3vh;
-            width: 2vw;
+            height: 8%;
+            width: 10%;
+        }
+
+        img {
+            width: 100%;
         }
         
         .button {
             background-color: rgb(181, 214, 244);
             color: #63585E;
-            width: 7.5vw;
+            width: 40%;
             border: 3px solid grey;
             border-radius: 10px;
-            height: 4vh; 
+            height: 10%; 
         }
 
         input[type=number]::-webkit-inner-spin-button, 
@@ -59,7 +63,7 @@
     </style>
     <div class="content">
     <h1>Revise </h1>
-    <img width="500" src="<%= dog.url %>"/>
+    <img src="<%= dog.url %>"/>
     <form method="POST" action="/ratings/<%= ratingId %>?_method=PUT">
         Grade: <input type="number" name="rating" min="1" max="10" default="5">
         <input type="hidden" name="ratingId" value="<%= ratingId %>">
