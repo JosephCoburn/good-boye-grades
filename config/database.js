@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://sei:kDwsIarHYXHyaln3@sei-mmuyv.azure.mongodb.net/test?retryWrites=true", { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
 
 // database connection event
 mongoose.connection.on('connected', function () {
