@@ -4,7 +4,7 @@
 
 ![Shiba Inu](public/images/shiba.jpg "A REALLY Good Boye")
 
-[Open App](http://underconstruction)
+[Open App](https://good-boye-grades.herokuapp.com/)
 
 #### Technologies Used:
 *Mongoose, Express, Node, HTML, CSS, Javascript*
