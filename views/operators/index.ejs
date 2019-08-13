@@ -7,44 +7,47 @@
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <!-- Materialize CSS Framework -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
   <link rel="stylesheet" href="stylesheets/materialize.css" />
   <link href="https://fonts.googleapis.com/css?family=Ultra&display=swap" rel="stylesheet">
   <!-- JavaScript for Materialize -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
   <script type="text/javascript" src="js/materialize.js"></script>
+  
 </head>
 
 <body>
     <nav>
       <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">GOOD BOYE GRADES</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <a href="/auth/google" class="brand-logo">GOOD BOYE GRADES</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">☰</i></a>
         <ul class="right hide-on-med-and-down">
-            <% if (user) { %>
           <li><a href="/dogs/home">START</a></li>
-            <% } %>
-          <li><a href="/auth/google">LOGIN</a></li>
             <% if (user) { %>
           <li><a href="/logout">LOGOUT</a></li>
+            <% } else { %>
+          <li><a href="/auth/google">LOGIN</a></li>
             <% } %>
         </ul>
       </div>
     </nav>
-    
+
     <ul class="sidenav" id="mobile-demo">
-        <% if (user) { %>
       <li><a href="/dogs/home">START</a></li>
-        <% } %>
-      <li><a href="/auth/google">LOGIN</a></li>
         <% if (user) { %>
       <li><a href="/logout">LOGOUT</a></li>
+        <% } else { %>
+      <li><a href="/auth/google">LOGIN</a></li>
         <% } %>
     </ul>
+  
+    <a href="/auth/google">
+      <img class="avatar-img" src="https://i.imgur.com/Zk1MaWN.png"><a href="/auth/google"></a></img>
+    </a>
 
-    <img class="avatar-img" src="https://i.imgur.com/Zk1MaWN.png"></img>
+    <div class="home-subtext">
+        <a href="/auth/google" style="color:white;">
+          <div>GOOD BOYE GRADES</div>
+        </a>
+    </div>
 
-    <div class="home-subtext">GOOD BOYE GRADES</div>
-    
-</body>
+  </body>
 </html>

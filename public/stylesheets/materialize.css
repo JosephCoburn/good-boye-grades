@@ -4,6 +4,7 @@
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
 
+
 .home-subtext {
   font-size: 56px;
   display: block;
@@ -3450,6 +3451,7 @@ table span.badge {
 
 /* This is needed for some mobile phones to display the Google Icon font properly */
 .material-icons {
+  margin: -5px 0 0 0;
   text-rendering: optimizeLegibility;
   -webkit-font-feature-settings: 'liga';
      -moz-font-feature-settings: 'liga';
@@ -7570,12 +7572,12 @@ input[type=range]::-ms-thumb {
   top: 0;
   bottom: 200px;
   margin: 0;
-  padding: 64px 0 0 0;
+  padding: 56px 0 0 0;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
-  height: 148px;
-  height: calc(148px + 60px);
-  height: -moz-calc(148px);
+  height: 92px;
+  height: calc(92px + 60px);
+  height: -moz-calc(92px);
   background-color: #2C3E50;
   z-index: 999;
   overflow-y: auto;

@@ -2,7 +2,7 @@
 #### Description
 *Have you ever seen a dog and though "Wow, what a good boye!"? Now, you can declare just how good they are! Just a few clicks from the landing page and you're ready to go!*
 
-![Shiba Inu](public/images/shiba.jpg "A REALLY Good Boye")
+![App Preview](https://i.imgur.com/9mEsme6.png "App preview")
 
 [Open App](https://good-boye-grades.herokuapp.com/)
 

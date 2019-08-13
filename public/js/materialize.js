@@ -4,6 +4,9 @@
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
 
+
+ /*----- cached element references -----*/
+
 var options = {
   edge: 'left',
   draggable: true,
