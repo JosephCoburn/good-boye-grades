@@ -1,5 +1,3 @@
-const Rating = require('../models/dog');
-const User = require('../models/operator');
 const Dog = require('../models/dog');
 
 module.exports = {
@@ -16,15 +14,10 @@ function index(req, res, next) {
       var ids = dog.ratings.map(function(rating) {
         return rating.operator.toString();
       }) 
-      // console.log('ids', ids);
       if (ids.includes(req.user.id)) {
         return true 
       }
     })
-    // var ratings = user.ratings.filter(function(rating) {
-    //   return rating.operator === user._id
-    // })
-    console.log(newDogs)
     res.render('ratings/index', {
       newDogs,
       user: req.user,
@@ -34,7 +27,6 @@ function index(req, res, next) {
 }
 
 function deleteRating(req, res, next) {
-  console.log(req.params, req.body)
   Dog.findById(req.body.dog, function(err, dog) {
     dog.ratings.remove(req.params.id)
     dog.save(function(err, dog) {
@@ -47,10 +39,7 @@ function deleteRating(req, res, next) {
 // will circle around to change routes to place update and edit on dog
 // instead of on rating
 function edit(req, res, next) {
-  console.log('hitting here')
-  console.log(req.params)
   Dog.findById(req.params.dogId, function(err, dog) {
-    // console.log(rating)
     res.render('ratings/edit', {
       dog,
       ratingId: req.params.ratingId
@@ -60,7 +49,6 @@ function edit(req, res, next) {
 
 function update(req, res, next) {
   Dog.findById(req.body.dogId, function(err, dog) {
-    // rating.rating = req.body.rating;
     dog.ratings.id(req.body.ratingId).rating = req.body.rating;
     dog.save(function(err, _dog) {
       res.redirect('/ratings/index')

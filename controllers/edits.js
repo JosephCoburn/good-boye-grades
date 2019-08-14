@@ -19,9 +19,7 @@ function index(req, res, next) {
         return true 
       }
     })
-    // var ratings = user.ratings.filter(function(rating) {
-    //   return rating.operator === user._id
-    // })
+
     console.log(newDogs)
   })
   // Make the query object to use with Operator.find based up

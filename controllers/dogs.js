@@ -12,7 +12,7 @@ function index(req, res) {
         // Again query all dogs but only fetch one offset by our random #
         Dog.findOne().skip(random).exec(
           function (err, dog) {
-            res.render('dogs/home', {
+            res.render('dogs', {
                 dog
             })
           })
@@ -25,16 +25,7 @@ function addRating(req, res, next) {
         req.body.operator = req.user.id;
         dog.ratings.push(req.body);
         dog.save(function(err) {
-          res.redirect(`/dogs/home`);
+          res.redirect(`dogs`);
         });
     });
 }
-
-// function viewRatings(req, res, next) {
-//     Dog.findById(req.body.dogId, function(err, dog) {
-//         dog.ratings.push(req.body);
-//         dog.save(function(err) {
-//           res.redirect(`/ratings`);
-//         });
-//     });
-// }

@@ -3,9 +3,9 @@ var router = express.Router();
 var dogsCtrl = require('../controllers/dogs')
 
 // GET /dogs
-router.get('/home', dogsCtrl.index);
+router.get('/', dogsCtrl.index);
 
 // Add ratings to dog
-router.post('/home', dogsCtrl.addRating);
+router.post('/', dogsCtrl.addRating);
 
 module.exports = router;

@@ -20,8 +20,8 @@
         <a href="/auth/google" class="brand-logo">GOOD BOYE GRADES</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">☰</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="/dogs/home">START</a></li>
-            <% if (user) { %>
+          <% if (user) { %>
+            <li><a href="/dogs">START</a></li>
           <li><a href="/logout">LOGOUT</a></li>
             <% } else { %>
           <li><a href="/auth/google">LOGIN</a></li>
@@ -31,8 +31,8 @@
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-      <li><a href="/dogs/home">START</a></li>
-        <% if (user) { %>
+      <% if (user) { %>
+        <li><a href="/dogs">START</a></li>
       <li><a href="/logout">LOGOUT</a></li>
         <% } else { %>
       <li><a href="/auth/google">LOGIN</a></li>
