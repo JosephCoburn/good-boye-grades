@@ -34,9 +34,6 @@
 - Mark favorite dogs
 
  
+---
 
 ![Do you have a moment to talk about who is a good boye?](public/images/moment.png "Wow. V profeshnul. Much proselytize.")
----
-![Haven't heard that name in years...](public/images/years.jpeg "Ruff life...")
----
-![Greatest Boye who ever lived](public/images/narrator.jpeg "Whomst'd've?")
